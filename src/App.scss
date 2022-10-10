@@ -67,6 +67,7 @@
                         color: #192227;
                         font-size: 16px;
                         max-width: 49%;
+                        font-family: "Archy";
                     }
                     .more{
                         display: flex;
@@ -138,7 +139,7 @@
         }
     }
     .blog_container{
-        
+        position: relative;
 
         .blog{
             display: flex;
@@ -158,6 +159,19 @@
             img{
                 width: 180px;
                 object-fit: cover;
+            }
+        }
+        .newblog_container{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            // display: none;
+
+            .newblog{
+                height: 67%;
             }
         }
     }

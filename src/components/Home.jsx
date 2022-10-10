@@ -1,6 +1,7 @@
 import React from 'react'
 import Blogs from './Blogs';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import '../fonts/ar-archy-regular.ttf';
 import Map from './Map';
 
 function Home() {
@@ -42,6 +43,9 @@ function Home() {
             id: 6
         }
     ]);
+
+    
+    
   return (
     <>
     <div className="main_container">
@@ -57,7 +61,7 @@ function Home() {
                         <p>პროექტის შესახებ</p>
                         <div className="more_info">
                             <h3>საუკუნეთა განმავლობაში გორი იყო ერთ-ერთი ყველაზე საკვანძო ქალაქი საქართველოს ისტორიაში</h3>
-                            <span>ნახე მეტი</span>
+                            <span>ნახე მეტი {">>>"}</span>
                         </div>
                     </div>
                 </div>
