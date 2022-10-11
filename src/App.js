@@ -4,9 +4,9 @@ import './fonts/ar-archy-regular.ttf';
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+      <div className="App">
+            <Home />
+      </div>
   );
 }
 
