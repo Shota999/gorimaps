@@ -2,8 +2,6 @@ import React from 'react'
 import Blogs from './Blogs';
 import { useState, useEffect } from 'react';
 import Circle from './Circle';
-// import '../fonts/ar-archy-regular.ttf';
-
 import Map from './Map';
 
 function Home() {
@@ -80,7 +78,13 @@ function Home() {
         }
     ]);
 
-    
+    const [more , setMore] = useState(false);
+
+    const moreClick = (val) => {
+        setMore(val);
+        setMore(!more);
+        console.log(more);
+    }
     
   return (
     <>
@@ -94,16 +98,32 @@ function Home() {
                         <p>პროექტის შესახებ</p>
                         <div className="more_info">
                             <h3>საუკუნეთა განმავლობაში გორი იყო ერთ-ერთი ყველაზე საკვანძო ქალაქი საქართველოს ისტორიაში</h3>
-                            <span>ნახე მეტი {">>>"}</span>
+                            <span onClick={()=> moreClick (more)}>ნახე მეტი {">>>"}</span>
                         </div>
                     </div>
                 </div>
-                {/* <Map /> */}
+                <Map />
             </div>
             <div className="right">
                     <Circle />
                     <div className="inner_container">
-                        <Blogs blogs={blogs} />
+                        <Blogs blogs={blogs}/>
+                        { more && 
+                            <div className="more_container">
+                                <Circle />
+                                <div className="back">
+                                    <div className="icon" onClick={()=> moreClick (more)}>
+                                        <i className="fa-solid fa-xmark" ></i>
+                                    </div>
+                                </div>
+                                <div className="more_info">
+                                    <h2>პროექტის შესახებ დამატებითი ინფრომაცია</h2>
+                                    <p>საუკუნეთა განმავლობაში გორი იყო ერთ-ერთი ყველაზე საკვანძო ქალაქი საქართველოს ისტორიაში, თუმცა ბევრი რამ ქალაქის შესახებ ფართო საზოგადოებაში არ არის ცნობილი:</p>
+                                    <p>1920-ის მიწისძვრის მასშტაბი, გორის მნიშვნელობა ვაჟა-ფშაველას ცხოვრებაში, ქალაქის დემოკრატიული და კულტურული ტრადიცია და სხვა მრავალი ამბავი.</p>
+                                    <p>აქ თქვენ შეგიძლიათ გაეცნოთ ისტორიულ და თანამედროვე მოვლენებს, ფოტომასალებს, საარქივო დოკუმენტებსა და ვიდეოებს გორის ისტორიის, კულტურისა და ყოველდღიურობის შესახებ.</p>
+                                    <p>დააჭირეთ რუკაზე შესაბამისი ლოკაციის პინს, ან აირჩიეთ გვერდითა ჩამონათვალიდან</p>
+                                </div>
+                            </div>}
                     </div>
             </div>
         </div>
