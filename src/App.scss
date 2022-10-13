@@ -54,7 +54,11 @@
 
             .left{
                 width: 47%;
+                height: 95%;
                 margin-right: 55px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
     
                 .container{
                     background-color: #d1ceb8;
@@ -91,6 +95,13 @@
                         p{
                             font-size: 14px;
                         }
+                    }
+                }
+                .map_container{
+                    height: 50%;
+
+                    .gm-style-mtc{
+                        display: none;
                     }
                 }
             }
